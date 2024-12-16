@@ -28,8 +28,8 @@ def dummies_converter(my_value):
     dummies = pd.get_dummies(data=df, drop_first=True)
 
     # Drop specific columns if needed
-    dummies = dummies.drop('Neighborhood_Blmngtn', axis=1)
-    dummies = dummies.drop('Sale Type_WD', axis=1)
+    dummies = dummies.drop('Neighborhood_Blmngtn', axis=1, errors='ignore')
+    dummies = dummies.drop('Sale Type_WD', axis=1, errors='ignore')
 
     # Convert the last row (newly added) to an array
     my_row = dummies.iloc[-1]
